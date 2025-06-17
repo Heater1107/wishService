@@ -23,6 +23,7 @@ public class WishProductService {
 
     // 상품 찜 토글 (등록/해제)
     public boolean toggleWishProduct(Long userId, Long productId) {
+    	System.out.println("💡 찜 토글 진입: userId=" + userId + ", productId=" + productId);
         if(userId == null || productId == null) {
             throw new WishException("잘못된 요청입니다.", WishErrorCode.INVALID_REQUEST);
         }

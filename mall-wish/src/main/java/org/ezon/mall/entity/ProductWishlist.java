@@ -7,6 +7,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -25,12 +26,12 @@ public class ProductWishlist {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long wishlistId;
 	
-	@Column(nullable = false)
+	@Column(name = "user_id", nullable = false)
 	private Long userId;
 
-	@Column(nullable = false)
+	@Column(name = "product_id", nullable = false)
 	private Long productId;
-	
-	@Column(nullable = false)
+
+	@Column(name = "added_at", nullable = false)
 	private LocalDateTime addedAt;
 }
